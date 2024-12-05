@@ -92,6 +92,21 @@ void main() {
       expect(await locationService.requestPermission(), PermissionStatus.deniedForever);
     });
 
+    test('getCurrentLocation should return location data', () async {
+      // Test with specific coordinates
+      mockLocation.setLocationData(51.5074, -0.1278, 8.0); // London coordinates
+      var result = await locationService.getCurrentLocation();
+      expect(result.latitude, 51.5074);
+      expect(result.longitude, -0.1278);
+      expect(result.accuracy, 8.0);
+
+      // Test with different coordinates
+      mockLocation.setLocationData(40.7128, -74.0060, 15.0); // NYC coordinates
+      result = await locationService.getCurrentLocation();
+      expect(result.latitude, 40.7128);
+      expect(result.longitude, -74.0060);
+      expect(result.accuracy, 15.0);
+    });
 
   });
 }
