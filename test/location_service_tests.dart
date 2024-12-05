@@ -17,16 +17,44 @@ import 'package:mockito/mockito.dart';
 
 // Custom mock for Location
 class MockLocation extends Mock implements Location {
-  bool _serviceEnabled = true;  // Add a field to track state
+  bool _serviceEnabled = true;
+  PermissionStatus _permissionStatus = PermissionStatus.granted;
+  LocationData _locationData = LocationData.fromMap({
+    'latitude': 0.0,
+    'longitude': 0.0,
+    'accuracy': 10.0,
+  });
 
   @override
   Future<bool> requestService() async {
-    return _serviceEnabled;  // Return the tracked state
+    return _serviceEnabled;
   }
 
-  // Method to control the mock's behavior
+  @override
+  Future<PermissionStatus> requestPermission() async {
+    return _permissionStatus;
+  }
+
+  @override
+  Future<LocationData> getLocation() async {
+    return _locationData;
+  }
+
+  // Methods to control the mock's behavior
   void setServiceEnabled(bool value) {
     _serviceEnabled = value;
+  }
+
+  void setPermissionStatus(PermissionStatus status) {
+    _permissionStatus = status;
+  }
+
+  void setLocationData(double latitude, double longitude, double accuracy) {
+    _locationData = LocationData.fromMap({
+      'latitude': latitude,
+      'longitude': longitude,
+      'accuracy': accuracy,
+    });
   }
 }
 
@@ -41,11 +69,27 @@ void main() {
 
   group('LocationService', () {
     test('isServiceEnabled should return value from location.requestService', () async {
-      // Instead of using when().thenAnswer(), we directly set the state
+      // Test when GPS is enabled
       mockLocation.setServiceEnabled(true);
-
-      // Verify if LocationService reports GPS status correctly
       expect(await locationService.isServiceEnabled(), true);
+
+      // Test when GPS is disabled
+      mockLocation.setServiceEnabled(false);
+      expect(await locationService.isServiceEnabled(), false);
+    });
+
+    test('requestPermission should return permission status', () async {
+      // Test granted permission
+      mockLocation.setPermissionStatus(PermissionStatus.granted);
+      expect(await locationService.requestPermission(), PermissionStatus.granted);
+
+      // Test denied permission
+      mockLocation.setPermissionStatus(PermissionStatus.denied);
+      expect(await locationService.requestPermission(), PermissionStatus.denied);
+
+      // Test denied forever permission
+      mockLocation.setPermissionStatus(PermissionStatus.deniedForever);
+      expect(await locationService.requestPermission(), PermissionStatus.deniedForever);
     });
 
 

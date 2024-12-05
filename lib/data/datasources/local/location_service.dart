@@ -8,4 +8,9 @@ class LocationService{
   Future<bool> isServiceEnabled() async {
     return await _location.requestService();
   }
+
+  Future<PermissionStatus> requestPermission() async{
+    return await _location.requestPermission();
+  }
+
 }
