@@ -38,6 +38,7 @@ dependencies:
   flutter_map: ^5.0.0
   latlong2:
   location: ^5.0.0
+  mockito:
 
 dev_dependencies:
   flutter_test:
