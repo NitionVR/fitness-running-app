@@ -6,7 +6,7 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:mobile_project_fitquest/domain/entities/route_point.dart';
+import 'package:mobile_project_fitquest/domain/entities/tracking/route_point.dart';
 
 
 void main (){
@@ -43,7 +43,7 @@ void main (){
 
     // Practical usage test
     test('should be usable for tracking movement over time', () {
-        // Given: Two points representing movement
+        // Given two points representing movement
         final point1 = RoutePoint(
         LatLng(51.5074, -0.1278), // Soweto
         DateTime(2024, 1, 1, 12, 0),
@@ -60,7 +60,7 @@ void main (){
         expect(
             point2.timestamp.difference(point1.timestamp).inMinutes, 5
         );
-    
+
         // And the positions should be different
         expect(point1.position != point2.position, true);
 
