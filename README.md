@@ -65,6 +65,7 @@ flutter run
 -  **Architecture**: MVVM with Clean Architecture
 
 ## Project Structure
+```
 lib/
 ├── core/
 │   ├── theme/                # App theme and styling
@@ -81,7 +82,7 @@ lib/
 │   ├── widgets/              # Reusable widgets
 │   └── viewmodels/           # Screen logic
 └── main.dart                 # App entry point
-
+```
 
 ## Requirements
 - **Flutter**: (latest version)
