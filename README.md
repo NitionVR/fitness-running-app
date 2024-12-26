@@ -34,11 +34,33 @@ FitQuest is an advanced running tracking application designed to help you achiev
 
 ---
 
-## Screenshots 
+## Screenshots
 
-*(Insert your app screenshots here with descriptions)*
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+    <img src="https://github.com/user-attachments/assets/0079b86a-c664-4012-8c54-ab093e006db9" width="200" alt="Loading Page">
+    <img src="https://github.com/user-attachments/assets/96fa76c8-5826-4918-a199-314e42bf50aa" width="200" alt="Login Page">
+    <img src="https://github.com/user-attachments/assets/3d06fe4f-9d4e-42fc-b335-7c029c5cfabe" width="200" alt="Home">
+    <img src="https://github.com/user-attachments/assets/760e79c8-f3a9-45bf-b534-54809ff55c92" width="200" alt="Home More">
+</div>
 
----
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+    <img src="https://github.com/user-attachments/assets/0d2ff93f-50c8-45c1-b567-aa4b4b157e73" width="200" alt="Location Permission">
+    <img src="https://github.com/user-attachments/assets/eacf5b7b-8d1a-4923-8c73-7ba5e80425ed" width="200" alt="Run">
+    <img src="https://github.com/user-attachments/assets/960c5c4c-2e26-4758-a64a-ef82127bb82f" width="200" alt="Pause">
+    <img src="https://github.com/user-attachments/assets/a7dd2197-f90d-46af-8174-b0b8fa8dd0c9" width="200" alt="Tracking History">
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+    <img src="https://github.com/user-attachments/assets/49c7566c-c3e5-443b-937e-2ea5e34237fb" width="200" alt="Replay">
+    <img src="https://github.com/user-attachments/assets/6e073eba-f8ac-414b-a9b7-a2e8beec0f7e" width="200" alt="Run Record">
+    <img src="https://github.com/user-attachments/assets/245c38be-a814-470f-83f1-de69e7e728ca" width="200" alt="Analytics">
+    <img src="https://github.com/user-attachments/assets/c8f6bc3a-9454-4ea1-910c-5153cbed7023" width="200" alt="Create Goal">
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+    <img src="https://github.com/user-attachments/assets/cf9aa914-abfc-4c8b-874a-2c7586b42fbd" width="200" alt="Active Plan">
+    <img src="https://github.com/user-attachments/assets/c26acddc-2b18-476f-b0af-f270fa8e1cac" width="200" alt="Settings">
+</div>
 
 ## Installation 
 
